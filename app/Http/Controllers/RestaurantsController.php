@@ -12,9 +12,9 @@ class RestaurantsController extends Controller
 {
 
 	public function index(){
-
-		$restaurant = \App\Restaurant::all();
-		return view('home', compact('restaurants'));
+		$title = 'Restaurant';
+		$restaurants = \App\Restaurant::all();
+		return view('manage.index', compact('title', 'restaurants'));
 	}
 
 	public function manage() {
@@ -25,20 +25,20 @@ class RestaurantsController extends Controller
 	}
 	public function manageCreate() {
 		$datetime = Carbon::now();
-		Restaurant::where('id', $request->id)->insert(['name' => $request->name, 'hotkey' => $hotkey, 'subhotkey' => $subhotkey, 'address' => $address, 'phhone' => $phone ]);
+		Restaurant::where('id', $request->id)->insert(['name' => $request->name, 'hotkey' => $hotkey, 'subhotkey' => $subhotkey, 'address' => $address, 'phone' => $phone ]);
 
-		return response()->json(['name' => $request->name, 'hotkey' => $hotkey, 'subhotkey' => $subhotkey, 'address' => $address, 'phhone' => $phone]);
+		return response()->json(['name' => $request->name, 'hotkey' => $hotkey, 'subhotkey' => $subhotkey, 'address' => $address, 'phone' => $phone]);
 //		return response()->json(['id' => $request->id, 'name' => $request->name, 'updated_at' => $datetime->format('Y-m-d H:i:s')]);
 	}
 	public function manageUpdate(Request $request) {
 		$datetime = Carbon::now();
-			Restaurant::where('id', $request->id)->update(['name' => $request->name, 'hotkey' => $hotkey, 'subhotkey' => $subhotkey, 'address' => $address, 'phhone' => $phone ]);
+			Restaurant::where('id', $request->id)->update(['name' => $request->name, 'hotkey' => $hotkey, 'subhotkey' => $subhotkey, 'address' => $address, 'phone' => $phone ]);
 
-		return response()->json(['name' => $request->name, 'hotkey' => $hotkey, 'subhotkey' => $subhotkey, 'address' => $address, 'phhone' => $phone]);
+		return response()->json(['name' => $request->name, 'hotkey' => $hotkey, 'subhotkey' => $subhotkey, 'address' => $address, 'phone' => $phone]);
 	}
 
 	public function manageDelete(Request $request) {
-		User::where('id', $request->id)->delete();
+		Restaurant::where('id', $request->id)->delete();
 
 		return response()->json(['id' => $request->id]);
 	}

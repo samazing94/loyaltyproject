@@ -13,7 +13,7 @@ class EloquentController extends Controller
 
     public function getAddEditRemoveColumnData()
     {
-        $users = User::select(['id', 'name', 'email', 'password', 'created_at', 'updated_at']);
+        $users = User::select(['id', 'username', 'name', 'email', 'password', 'created_at', 'updated_at']);
 
         return Datatables::of($users)
             ->addColumn('action', function ($user) {

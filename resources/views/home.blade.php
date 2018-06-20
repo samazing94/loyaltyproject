@@ -40,9 +40,9 @@
 								</tr>
 							</tbody>
 						</table>
-						<a href="{{ url('/manage') }}">List of Restaurants</a>
+						<a href="{{ url('/datatable') }}">List of Restaurants</a>
 						<br>
-						<a href="{{ url('/manage/index') }}">Register Restaurants</a>
+						<a href="{{ url('/datatable/register') }}">Register Restaurants</a>
 					</div>
 				</section>
 			</div>

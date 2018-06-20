@@ -19,7 +19,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('hotkey')->unique();
             $table->string('subhotkey');
             $table->string('address');
-            $table->mediumInteger('phone');
+            $table->bigInteger('phone');
             $table->timestamps();
         });
     }
