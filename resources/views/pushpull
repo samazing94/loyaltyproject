@@ -1,0 +1,4 @@
+<?php
+//http://localhost:8000/loyalty/public/customer/create?msisdn=01725276349&sms=RST%20ED%20Ferdous%201122%20Student%20Badda
+$ur = $_SERVER['REQUEST_URI'];
+$ur = explode(' ', $ur);
