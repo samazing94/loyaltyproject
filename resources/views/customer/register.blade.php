@@ -1,29 +1,22 @@
-@extends('templates.admin.layout')
+@extends('layouts.dashboard')
+@section('section')
 
-@section('content')
-	<div class="">
+@section('title')
+
+	{{ $title }}
+
+@endsection
+<div class="">
 		<div class="clearfix"></div>
 		<div class="row">
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="x_panel">
 					<div class="x_title">
-						<h2>Create Restaurant<i class="fa fa-chevron-left"></i> Back </a></h2>
 						<div class="clearfix"></div>
 					</div>
 					<div class="x_content">
 						<br />
-						<form method="post" action="{{ route('manage.create') }}" data-parsley-validate class="form-horizontal form-label-left">
-
-							<div class="form-group{{ $errors->has('restaurant') ? ' has-error' : '' }}">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required">*</span>
-								</label>
-								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input type="text" value="{{ Request::old('restaurant') ?: '' }}" id="restaurant" name="restaurant" class="form-control col-md-7 col-xs-12">
-									@if ($errors->has('restaurants'))
-									<span class="help-block">{{ $errors->first('restaurants') }}</span>
-									@endif
-								</div>
-							</div>
+						<form method="get" action="{{ url('customer/create') }}" data-parsley-validate class="form-horizontal form-label-left">
 
 							<div class="form-group{{ $errors->has('hotkey') ? ' has-error' : '' }}">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="hotkey">Hotkey <span class="required">*</span>
@@ -37,7 +30,7 @@
 							</div>
 
 							<div class="form-group{{ $errors->has('subhotkey') ? ' has-error' : '' }}">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="description">SubHotkey <span class="required">*</span>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="subhotkey">SubHotkey <span class="required">*</span>
 								</label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<input type="text" value="{{ Request::old('subhotkey') ?: '' }}" id="subhotkey" name="subhotkey" class="form-control col-md-7 col-xs-12">
@@ -47,19 +40,39 @@
 								</div>
 							</div>
 
-							<div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="description">Address<span class="required">*</span>
+							<div class="form-group{{ $errors->has('dob') ? ' has-error' : '' }}">
+								<label for="dob" class="control-label col-md-3 col-sm-3 col-xs-12">Date of Birth</label> 
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<input id="dob" type="date" name="dob" value="" required="required" class="form-control">
+
+								</div>
+							</div>
+
+							<div class="form-group{{ $errors->has('profession') ? ' has-error' : '' }}">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="description">Profession<span class="required">*</span>
 								</label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
-									<input type="text" value="{{ Request::old('address') ?: '' }}" id="address" name="address" class="form-control col-md-7 col-xs-12">
-									@if ($errors->has('address'))
-									<span class="help-block">{{ $errors->first('address') }}</span>
+									<input type="text" value="{{ Request::old('profession') ?: '' }}" id="profession" name="profession" class="form-control col-md-7 col-xs-12">
+									@if ($errors->has('profession'))
+									<span class="help-block">{{ $errors->first('profession') }}</span>
+									@endif
+								</div>
+							</div>
+
+
+							<div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="description">Location<span class="required">*</span>
+								</label>
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<input type="text" value="{{ Request::old('location') ?: '' }}" id="location" name="location" class="form-control col-md-7 col-xs-12">
+									@if ($errors->has('location'))
+									<span class="help-block">{{ $errors->first('location') }}</span>
 									@endif
 								</div>
 							</div>
 
 							<div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="description">Phone No.<span class="required">*</span>
+								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="phone">Phone No.<span class="required">*</span>
 								</label>
 								<div class="col-md-6 col-sm-6 col-xs-12">
 									<input type="text" value="{{ Request::old('phone') ?: '' }}" id="phone" name="phone" class="form-control col-md-7 col-xs-12">
@@ -74,7 +87,7 @@
 							<div class="form-group">
 								<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 									<input type="hidden" name="_token" value="{{ Session::token() }}">
-									<button type="submit" class="btn btn-success">Create restaurant</button>
+									<button type="submit" class="btn btn-success">Sign up!</button>
 								</div>
 							</div>
 						</form>
@@ -84,3 +97,4 @@
 		</div>
 	</div>
 @stop
+						

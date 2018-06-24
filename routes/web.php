@@ -23,10 +23,19 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'UserController@index');
 
+//restaurant list
 Route::get('/datatable', 'DataTableController@datatable');
 Route::get('datatable/getdata','DataTableController@getPosts')->name('datatable/getdata');
 Route::get('/datatable/register', 'DataTableController@register');
 
+//datatable operations
 Route::post('/datatable/create', 'DataTableController@create');
 Route::post('/datatable/update', 'DataTableController@update');
 Route::post('/datatable/delete', 'DataTableController@delete');
+
+//customer
+Route::get('/customer/register', 'CustomerController@register');
+//Route::get('/customer/success', 'CustomerController@success');
+
+//customer operations
+Route::get('/customer/create', 'CustomerController@create');

@@ -33,8 +33,8 @@ class DataTableController extends Controller
 		$phone = $request->input('phone');
 		
 		$rst = array('name' => $name, 'hotkey' => $hotkey, 'subhotkey' => $subhotkey, 'address' => $address, 'phone' => $phone);
-		DB::table('restaurants')->insert($rst);    	
-		return redirect()->to('/datatable');
+		DB::table('restaurants')->insert($rst);
+		return redirect()->to('/datatable/register');
 	}
 
 	public function update(Request $request)
