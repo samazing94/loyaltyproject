@@ -24,9 +24,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'UserController@index');
 
 //restaurant list
-Route::get('/datatable', 'DataTableController@datatable');
-Route::get('datatable/getdata','DataTableController@getPosts')->name('datatable/getdata');
-Route::get('/datatable/register', 'DataTableController@register');
+Route::get('/restaurant', 'DataTableController@datatable');
+Route::get('/restaurant/getdata','DataTableController@getPosts')->name('datatable/getdata');
+Route::get('/restaurant/register', 'DataTableController@register');
 
 //datatable operations
 Route::post('/datatable/create', 'DataTableController@create');

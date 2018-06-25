@@ -16,7 +16,7 @@ class DataTableController extends Controller
 	{
 		$title = 'Restaurant';
 		$restaurants = \App\Restaurant::all();
-		return view('datatable', compact('title', 'restaurants'));
+		return view('restaurant', compact('title', 'restaurants'));
 	}
 
 	public function register()
@@ -34,7 +34,7 @@ class DataTableController extends Controller
 		
 		$rst = array('name' => $name, 'hotkey' => $hotkey, 'subhotkey' => $subhotkey, 'address' => $address, 'phone' => $phone);
 		DB::table('restaurants')->insert($rst);
-		return redirect()->to('/datatable/register');
+		return redirect()->to('/restaurant/register');
 	}
 
 	public function update(Request $request)
