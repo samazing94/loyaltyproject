@@ -34,8 +34,11 @@ Route::post('/datatable/update', 'DataTableController@update');
 Route::post('/datatable/delete', 'DataTableController@delete');
 
 //customer
-Route::get('/customer/register', 'CustomerController@register');
+Route::get('/sms', 'CustomerController@customer');
+Route::get('/pushpull', 'CustomerController@pushpull');
 //Route::get('/customer/success', 'CustomerController@success');
 
 //customer operations
 Route::get('/customer/create', 'CustomerController@create');
+
+//

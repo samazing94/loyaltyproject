@@ -9,6 +9,7 @@ class Customer extends Model
    protected $fillable = [
 		'hotkey',
 		'subhotkey',
+		'name',
 		'dob',
 		'profession',
 		'location',

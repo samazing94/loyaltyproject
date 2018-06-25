@@ -17,7 +17,8 @@ class CreateCustomersTable extends Migration
             $table->increments('id');
             $table->string('hotkey');
             $table->string('subhotkey');
-            $table->date('dob');
+            $table->string('name');
+            $table->string('dob');
             $table->string('profession');
             $table->string('location');
             $table->bigInteger('phone')->unique();

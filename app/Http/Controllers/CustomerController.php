@@ -15,9 +15,15 @@ class CustomerController extends Controller
 
    public function customer()
 	{
-		$title = 'Loyalty Customer';
+		//$title = 'Loyalty Customer';
 		$customers = \App\Customer::all();
-		return view('\customer\index', compact('title', 'customers'));
+		return view('sms');
+	}
+	public function pushpull()
+	{
+		//$title = 'Loyalty Customer';
+		$customers = \App\Customer::all();
+		return view('pushpull');
 	}
 	public function register()
 	{
