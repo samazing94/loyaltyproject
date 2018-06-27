@@ -15,11 +15,11 @@
 					<div class="x_content">
 						<br />
 						<form method="post" onsubmit = "tosubmit()" action="{{ url('offerlist/calculate') }}" data-parsley-validate class="form-horizontal form-label-left">
-							<select>
-								<option value="loyalpow">Loyal Pow</option>
-								<option value="loyalpow">Buffet Fiesta</option>
+							<select id= "name" name="name">
+								<option value="LoyalPow">Loyal Pow</option>
+								<option value="BuffetFiesta">Buffet Fiesta</option>
 							</select>
-							<input id="name" type = "hidden" name = "name" value = "" />
+							
 							<script type="text/javascript">
 					   			 function setTextField(ddl) {
 					        		document.getElementById('name').value = ddl.options[ddl.selectedIndex].text;

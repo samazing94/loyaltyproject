@@ -7,8 +7,8 @@
 	<br>
 	<p> Mobile No: </p>
 	<br>
-	<p> Amount spent: </p> {{points[0]->min_amount }}
+	<p> Amount spent: </p> {{ $points->min_amount }}
 	<br>
-	<p> Points Received now: </p> {{ points[0]->point }}
+	<p> Points Received now: </p> {{ $points->point }}
 
 @endsection
