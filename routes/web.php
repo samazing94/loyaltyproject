@@ -22,6 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home', 'UserController@index');
+Route::get('/userprofile', 'UserController@userprofile');
 
 //restaurant list
 Route::get('/restaurant', 'DataTableController@datatable');
@@ -29,9 +30,9 @@ Route::get('/restaurant/getdata','DataTableController@getPosts')->name('datatabl
 Route::get('/restaurant/register', 'DataTableController@register');
 
 //datatable operations
-Route::post('/datatable/create', 'DataTableController@create');
-Route::post('/datatable/update', 'DataTableController@update');
-Route::post('/datatable/delete', 'DataTableController@delete');
+Route::post('/restaurant/create', 'DataTableController@create');
+Route::post('/restaurant/update', 'DataTableController@update');
+Route::post('/restaurant/delete', 'DataTableController@delete');
 
 //customer
 Route::get('/sms', 'CustomerController@customer');
@@ -41,4 +42,7 @@ Route::get('/pushpull', 'CustomerController@pushpull');
 //customer operations
 Route::get('/customer/create', 'CustomerController@create');
 
+//point mgt
+Route::get('/offerlist', 'PointsController@index');
+Route::post('/offerlist/calculate', 'PointsController@calculate');
 //

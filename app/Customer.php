@@ -6,14 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
-   protected $fillable = [
-		'hotkey',
-		'subhotkey',
-		'name',	
+	public $primaryKey = 'id';
+   	protected $fillable = [
+		'mobile_number',
+		'firstname',
+		'lastname',
 		'dob',
 		'profession',
 		'location',
-		'phone',
-		'points'
 	];
 }

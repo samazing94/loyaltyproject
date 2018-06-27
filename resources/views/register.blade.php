@@ -16,7 +16,7 @@
 					</div>
 					<div class="x_content">
 						<br />
-						<form method="post" action="{{ url('datatable/create') }}" data-parsley-validate class="form-horizontal form-label-left">
+						<form method="post" action="{{ url('restaurant/create') }}" data-parsley-validate class="form-horizontal form-label-left">
 
 							<div class="form-group">
 								<label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required">*</span>

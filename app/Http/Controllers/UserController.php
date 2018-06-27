@@ -13,8 +13,14 @@ class UserController extends Controller
 
 	public function index(){
 
+		return view('home');
+	}
+
+
+	public function userprofile(){
+
 		$user = \App\User::all();
-		return view('home', compact('users'));
+		return view('userprofile', compact('users'));
 	}
 
 	public function manage() {

@@ -1,47 +1,5 @@
 @extends('layouts.dashboard')
 @section('section')
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-
-    <div class="container">
-            <div class="card">
-                <div class="card-header">Profile</div>
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    <h1> Hello, {{ Auth::user()->username}} </h1>
-                    <p>You are logged in!</p>
-                    <table id="pageTable" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        {{ Auth::user()->username }}
-                                    </td>
-                                    <td>
-                                        {{ Auth::user()->name }}
-                                    </td>
-                                    <td>
-                                        {{ Auth::user()->email }}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <a href="{{ url('/restaurant') }}">List of Restaurants</a>
-                        <br>
-                        <a href="{{ url('/restaurant/register') }}">Register Restaurants</a>
-                    </div>
-                </section>
-            </div>
             <div class="col-sm-12">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
@@ -445,7 +403,7 @@
                 <!-- /.col-lg-4 -->
             
 @endsection
-@section('scripts')
+<!-- @section('scripts')
 <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('js/jquery.dataTables.bootstrap.min.js') }}"></script>
 <script>
@@ -486,4 +444,4 @@
             }
         });
     });
-</script>
+</script> -->

@@ -1,403 +1,499 @@
-    @extends('layouts.plane')
+	@extends('layouts.plane')
 
-    @section('body')
-     <div id="wrapper">
+	@section('body')
+	 
+	 <div id="wrapper">
 
-            <!-- Navigation -->
-            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{ url ('') }}">SB Admin v2.0 | Laravel 5</a>
-                </div>
-                <!-- /.navbar-header -->
+			<!-- Navigation -->
+			<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+				<a href=" url ('/home') " class="pull-left" style="margin:1em;"><img src= "{{ asset("assets/img/sidonia.png") }}"></a> 
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<!-- /.navbar-header -->
 
-                <ul class="nav navbar-top-links navbar-right">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-messages">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <strong>John Smith</strong>
-                                        <span class="pull-right text-muted">
-                                            <em>Yesterday</em>
-                                        </span>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <strong>John Smith</strong>
-                                        <span class="pull-right text-muted">
-                                            <em>Yesterday</em>
-                                        </span>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <strong>John Smith</strong>
-                                        <span class="pull-right text-muted">
-                                            <em>Yesterday</em>
-                                        </span>
-                                    </div>
-                                    <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>Read All Messages</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- /.dropdown-messages -->
-                    </li>
-                    <!-- /.dropdown -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-tasks">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>
-                                            <strong>Task 1</strong>
-                                            <span class="pull-right text-muted">40% Complete</span>
-                                        </p>
-                                       
-                                            <div>
-                                            @include('widgets.progress', array('animated'=> true, 'class'=>'success', 'value'=>'40'))
-                                                <span class="sr-only">40% Complete (success)</span>
-                                            </div>
-                                       
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>
-                                            <strong>Task 2</strong>
-                                            <span class="pull-right text-muted">20% Complete</span>
-                                        </p>
-                                       
-                                            <div>
-                                            @include('widgets.progress', array('animated'=> true, 'class'=>'info', 'value'=>'20'))
-                                                <span class="sr-only">20% Complete</span>
-                                            </div>
-                                       
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>
-                                            <strong>Task 3</strong>
-                                            <span class="pull-right text-muted">60% Complete</span>
-                                        </p>
-                                        
-                                            <div>
-                                            @include('widgets.progress', array('animated'=> true, 'class'=>'warning', 'value'=>'60'))
-                                                <span class="sr-only">60% Complete (warning)</span>
-                                            </div>
-                                       
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>
-                                            <strong>Task 4</strong>
-                                            <span class="pull-right text-muted">80% Complete</span>
-                                        </p>
-                                        
-                                            <div>
-                                            @include('widgets.progress', array('animated'=> true,'class'=>'danger', 'value'=>'80'))
-                                                <span class="sr-only">80% Complete (danger)</span>
-                                            </div>
-                                        
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>See All Tasks</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- /.dropdown-tasks -->
-                    </li>
-                    <!-- /.dropdown -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-alerts">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-comment fa-fw"></i> New Comment
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                        <span class="pull-right text-muted small">12 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-tasks fa-fw"></i> New Task
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <div class="container">
-            <div class="card">
-                <div class="card-header">Profile</div>
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    <h1> Hello, {{ Auth::user()->username}} </h1>
-                    <p>You are logged in!</p>
-                    <table id="pageTable" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                </tr>
-                            </thead>
+				<ul class="nav navbar-top-links navbar-right">
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
+						</a>
+						<ul class="dropdown-menu dropdown-messages">
+							<li>
+								<a href="#">
+									<div>
+										<strong>John Smith</strong>
+										<span class="pull-right text-muted">
+											<em>Yesterday</em>
+										</span>
+									</div>
+									<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<div>
+										<strong>John Smith</strong>
+										<span class="pull-right text-muted">
+											<em>Yesterday</em>
+										</span>
+									</div>
+									<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<div>
+										<strong>John Smith</strong>
+										<span class="pull-right text-muted">
+											<em>Yesterday</em>
+										</span>
+									</div>
+									<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend...</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a class="text-center" href="#">
+									<strong>Read All Messages</strong>
+									<i class="fa fa-angle-right"></i>
+								</a>
+							</li>
+						</ul>
+						<!-- /.dropdown-messages -->
+					</li>
+					<!-- /.dropdown -->
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+						</a>
+						<ul class="dropdown-menu dropdown-tasks">
+							<li>
+								<a href="#">
+									<div>
+										<p>
+											<strong>Task 1</strong>
+											<span class="pull-right text-muted">40% Complete</span>
+										</p>
+									   
+											<div>
+											@include('widgets.progress', array('animated'=> true, 'class'=>'success', 'value'=>'40'))
+												<span class="sr-only">40% Complete (success)</span>
+											</div>
+									   
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<div>
+										<p>
+											<strong>Task 2</strong>
+											<span class="pull-right text-muted">20% Complete</span>
+										</p>
+									   
+											<div>
+											@include('widgets.progress', array('animated'=> true, 'class'=>'info', 'value'=>'20'))
+												<span class="sr-only">20% Complete</span>
+											</div>
+									   
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<div>
+										<p>
+											<strong>Task 3</strong>
+											<span class="pull-right text-muted">60% Complete</span>
+										</p>
+										
+											<div>
+											@include('widgets.progress', array('animated'=> true, 'class'=>'warning', 'value'=>'60'))
+												<span class="sr-only">60% Complete (warning)</span>
+											</div>
+									   
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<div>
+										<p>
+											<strong>Task 4</strong>
+											<span class="pull-right text-muted">80% Complete</span>
+										</p>
+										
+											<div>
+											@include('widgets.progress', array('animated'=> true,'class'=>'danger', 'value'=>'80'))
+												<span class="sr-only">80% Complete (danger)</span>
+											</div>
+										
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a class="text-center" href="#">
+									<strong>See All Tasks</strong>
+									<i class="fa fa-angle-right"></i>
+								</a>
+							</li>
+						</ul>
+						<!-- /.dropdown-tasks -->
+					</li>
+					<!-- /.dropdown -->
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+						</a>
+						<ul class="dropdown-menu dropdown-alerts">
+							<li>
+								<a href="#">
+									<div>
+										<i class="fa fa-comment fa-fw"></i> New Comment
+										<span class="pull-right text-muted small">4 minutes ago</span>
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<div>
+										<i class="fa fa-twitter fa-fw"></i> 3 New Followers
+										<span class="pull-right text-muted small">12 minutes ago</span>
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<div>
+										<i class="fa fa-envelope fa-fw"></i> Message Sent
+										<span class="pull-right text-muted small">4 minutes ago</span>
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<div>
+										<i class="fa fa-tasks fa-fw"></i> New Task
+										<span class="pull-right text-muted small">4 minutes ago</span>
+									</div>
+								</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">
+									<div>
+										<i class="fa fa-upload fa-fw"></i> Server Rebooted
+										<span class="pull-right text-muted small">4 minutes ago</span>
+									</div>
+								</a>
+							</li>
+						
+							<li class="divider"></li>
+							<li>
+								<a class="text-center" href="#">
+									<strong>See All Alerts</strong>
+									<i class="fa fa-angle-right"></i>
+								</a>
+							</li>
+						</ul>
+						<!-- /.dropdown-alerts -->
+					</li>
+					<!-- /.dropdown -->
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+						</a>
+						<ul class="dropdown-menu dropdown-user">
+							<li><a href="{{ url('/userprofile') }}"><i class="fa fa-user fa-fw"></i> User Profile</a>
+							</li>
+							<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+							</li>
+							<li class="divider"></li>
+								@if (Route::has('login'))
+										@auth
+									<a class="dropdown-item" href="{{ route('logout') }}"
+									   onclick="event.preventDefault();
+													 document.getElementById('logout-form').submit();">
+										{{ __('Logout') }}
+									</a>
 
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        {{ Auth::user()->username }}
-                                    </td>
-                                    <td>
-                                        {{ Auth::user()->name }}
-                                    </td>
-                                    <td>
-                                        {{ Auth::user()->email }}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <a href="{{ url('/datatable') }}">List of Restaurants</a>
-                        <br>
-                        <a href="{{ url('/datatable/register') }}">Register Restaurants</a>
-                    </div>
-                </section>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>See All Alerts</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- /.dropdown-alerts -->
-                    </li>
-                    <!-- /.dropdown -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                            </li>
-                            <li class="divider"></li>
-                                @if (Route::has('login'))
-                                        @auth
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+										@csrf
+									</form>
+							</li>
+						</ul>
+						<!-- /.dropdown-user -->
+					</li>
+					<!-- /.dropdown -->
+				</ul>
+				<!-- /.navbar-top-links -->
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                            </li>
-                        </ul>
-                        <!-- /.dropdown-user -->
-                    </li>
-                    <!-- /.dropdown -->
-                </ul>
-                <!-- /.navbar-top-links -->
+				<div class="navbar-default sidebar" role="navigation">
+					<div class="sidebar-nav navbar-collapse">
+						<ul class="nav" id="side-menu">
+							<li {{ (Request::is('/home') ? 'class="active"' : '') }}>
+								<a href="{{ url ('/home') }}"><i class="fas fa-home"></i></i> Home</a>
+							</li>
+					 
+							</li>
+							<!-- restaurant -->
+							 <li>
+								<a href="#"><i class="fas fa-utensils"></i> Restaurant Management<span class="fa arrow"></span></a>
+								<ul class="nav nav-second-level">
+									<li>
+										<a href="{{ url('/restaurant') }}">Manage Restaurants</a>
+									</li>
+									<li>
+										<a href="{{ url('/restaurant/register') }}">Create New Restaurant</a>
+									</li>
+								</ul>
+							</li>
+							<!-- SMS Management -->
+							<li>
+								<a href="/loyalty/pushpull.php?msisdn=&sms="><i class="fas fa-envelope"></i> SMS Management<span class="fa arrow"></span></a>
+								<ul class="nav nav-second-level">
+									<li>
+										<a href="#">SMS List</a>
+									</li>
+									<li>
+										<a href="#">SMS Pending</a>
+									</li>
+								</ul>
+							</li>
 
-                <div class="navbar-default sidebar" role="navigation">
-                    <div class="sidebar-nav navbar-collapse">
-                        <ul class="nav" id="side-menu">
-                            <li class="sidebar-search">
-                                <div class="input-group custom-search-form">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                    <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                                </div>
-                                <!-- /input-group -->
-                            </li>
-                            <li {{ (Request::is('/') ? 'class="active"' : '') }}>
-                                <a href="{{ url ('') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                            </li>
-                            <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
-                                <a href="{{ url ('charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li {{ (Request::is('*tables') ? 'class="active"' : '') }}>
-                                <a href="{{ url ('tables') }}"><i class="fa fa-table fa-fw"></i> Tables</a>
-                            </li>
-                            <li {{ (Request::is('*forms') ? 'class="active"' : '') }}>
-                                <a href="{{ url ('forms') }}"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                            </li>
-                            <li >
-                                <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
-                                        <a href="{{ url ('panels') }}">Panels and Collapsibles</a>
-                                    </li>
-                                    <li {{ (Request::is('*buttons') ? 'class="active"' : '') }}>
-                                        <a href="{{ url ('buttons' ) }}">Buttons</a>
-                                    </li>
-                                    <li {{ (Request::is('*notifications') ? 'class="active"' : '') }}>
-                                        <a href="{{ url('notifications') }}">Alerts</a>
-                                    </li>
-                                    <li {{ (Request::is('*typography') ? 'class="active"' : '') }}>
-                                        <a href="{{ url ('typography') }}">Typography</a>
-                                    </li>
-                                    <li {{ (Request::is('*icons') ? 'class="active"' : '') }}>
-                                        <a href="{{ url ('icons') }}"> Icons</a>
-                                    </li>
-                                    <li {{ (Request::is('*grid') ? 'class="active"' : '') }}>
-                                        <a href="{{ url ('grid') }}">Grid</a>
-                                    </li>
-                                </ul>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="#">Second Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Second Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level <span class="fa arrow"></span></a>
-                                        <ul class="nav nav-third-level">
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Third Level Item</a>
-                                            </li>
-                                        </ul>
-                                        <!-- /.nav-third-level -->
-                                    </li>
-                                </ul>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level">
-                                    <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                        <a href="{{ url ('blank') }}">Blank Page</a>
-                                    </li>
-                                    <li>
-                                         @else
-                                        <a href="{{ route('login') }}">Login Page</a>
-                                        @endauth
-                                    </li>
-                                    @endif
-                                </ul>
-                                <!-- /.nav-second-level -->
-                            </li>
-                            <li {{ (Request::is('*documentation') ? 'class="active"' : '') }}>
-                                <a href="{{ url ('documentation') }}"><i class="fa fa-file-word-o fa-fw"></i> Documentation</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.sidebar-collapse -->
-                </div>
-                <!-- /.navbar-static-side -->
-            </nav>
+							<!-- Customer Management -->
 
-            <div id="page-wrapper">
-    			 <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">@yield('page_heading')</h1>
-                    </div>
-                    <!-- /.col-lg-12 -->
-               </div>
-    			<div class="row">  
-    				@yield('section')
+							<li>
+								<a href="#"><i class="fas fa-user-circle"></i> Customer Managment<span class="fa arrow"></span></a>
+								<ul class="nav nav-second-level">
+									<li>
+										<a href="{{ url ('blank') }}">Manage Customers</a>
+									</li>
+									<li>
+										<a href="{{ url ('blank') }}">Create New Customer</a>
+									</li>
+								</ul>
+								<!-- /.nav-second-level -->
+							</li>
 
-                </div>
-                <!-- /#page-wrapper -->
-            </div>
-        </div>
-    @stop
+								<!-- Shop Point Management -->
+
+							<li>
+								<a href="#"><i class="fas fa-user-circle"></i> Shop Point Management<span class="fa arrow"></span></a>
+								<ul class="nav nav-second-level">
+									<li>
+										<a href="#">Point Offers</a>		
+									</li>
+									<li>
+										<a href="{{ url ('blank') }}">Create Create Offer</a>
+									</li>
+								</ul>
+								<!-- /.nav-second-level -->
+							</li>
+									
+						   	<!-- Report Management -->
+							<li>
+								<a href="#"><i class="fa fa-files-o fa-fw"></i> Report Management<span class="fa arrow"></span></a>
+								<ul class="nav nav-second-level">
+									<li>
+										<a href="{{ url ('blank') }}">List of Reports</a>
+									</li>
+						<!-- 			<li>
+										 @else
+										<a href="{{ route('login') }}">Login Page</a>
+										@endauth
+									</li>
+									@endif -->
+								</ul>
+								<!-- /.nav-second-level -->
+							</li>
+						</ul>
+					</div>
+					<!-- /.sidebar-collapse -->
+				</div>
+				<!-- /.navbar-static-side -->
+			</nav>
+
+			<div id="page-wrapper">
+				 <div class="row">
+					<div class="col-lg-12">
+						<h1 class="page-header">@yield('page_heading')</h1>
+					</div>
+					<!-- /.col-lg-12 -->
+			   </div>
+				<div class="row">  
+					@yield('section')
+
+				</div>
+				<!-- /#page-wrapper -->
+			</div>
+		</div>
+
+	  	<script>
+	  	(function($, window, document, undefined) {
+
+	    var pluginName = "metisMenu",
+	        defaults = {
+	            toggle: true,
+	            doubleTapToGo: false
+	        };
+
+	    function Plugin(element, options) {
+	        this.element = $(element);
+	        this.settings = $.extend({}, defaults, options);
+	        this._defaults = defaults;
+	        this._name = pluginName;
+	        this.init();
+	    }
+
+	    Plugin.prototype = {
+	        init: function() {
+
+	            var $this = this.element,
+	                $toggle = this.settings.toggle,
+	                obj = this;
+
+	            if (this.isIE() <= 9) {
+	                $this.find("li.active").has("ul").children("ul").collapse("show");
+	                $this.find("li").not(".active").has("ul").children("ul").collapse("hide");
+	            } else {
+	                $this.find("li.active").has("ul").children("ul").addClass("collapse in");
+	                $this.find("li").not(".active").has("ul").children("ul").addClass("collapse");
+	            }
+
+	            //add the "doubleTapToGo" class to active items if needed
+	            if (obj.settings.doubleTapToGo) {
+	                $this.find("li.active").has("ul").children("a").addClass("doubleTapToGo");
+	            }
+
+	            $this.find("li").has("ul").children("a").on("click" + "." + pluginName, function(e) {
+	                e.preventDefault();
+
+	                //Do we need to enable the double tap
+	                if (obj.settings.doubleTapToGo) {
+
+	                    //if we hit a second time on the link and the href is valid, navigate to that url
+	                    if (obj.doubleTapToGo($(this)) && $(this).attr("href") !== "#" && $(this).attr("href") !== "") {
+	                        e.stopPropagation();
+	                        document.location = $(this).attr("href");
+	                        return;
+	                    }
+	                }
+
+	                $(this).parent("li").toggleClass("active").children("ul").collapse("toggle");
+
+	                if ($toggle) {
+	                    $(this).parent("li").siblings().removeClass("active").children("ul.in").collapse("hide");
+	                }
+
+	            });
+	        },
+
+	        isIE: function() { //https://gist.github.com/padolsey/527683
+	            var undef,
+	                v = 3,
+	                div = document.createElement("div"),
+	                all = div.getElementsByTagName("i");
+
+	            while (
+	                div.innerHTML = "<!--[if gt IE " + (++v) + "]><i></i><![endif]-->",
+	                all[0]
+	            ) {
+	                return v > 4 ? v : undef;
+	            }
+	        },
+
+	        //Enable the link on the second click.
+	        doubleTapToGo: function(elem) {
+	            var $this = this.element;
+
+	            //if the class "doubleTapToGo" exists, remove it and return
+	            if (elem.hasClass("doubleTapToGo")) {
+	                elem.removeClass("doubleTapToGo");
+	                return true;
+	            }
+
+	            //does not exists, add a new class and return false
+	            if (elem.parent().children("ul").length) {
+	                 //first remove all other class
+	                $this.find(".doubleTapToGo").removeClass("doubleTapToGo");
+	                //add the class on the current element
+	                elem.addClass("doubleTapToGo");
+	                return false;
+	            }
+	        },
+
+	        remove: function() {
+	            this.element.off("." + pluginName);
+	            this.element.removeData(pluginName);
+	        }
+
+	    };
+
+	    $.fn[pluginName] = function(options) {
+	        this.each(function () {
+	            var el = $(this);
+	            if (el.data(pluginName)) {
+	                el.data(pluginName).remove();
+	            }
+	            el.data(pluginName, new Plugin(this, options));
+	        });
+	        return this;
+	    };
+
+	})(jQuery, window, document);
+	$(function() {
+
+	    $('#side-menu').metisMenu();
+
+	});
+
+	//Loads the correct sidebar on window load,
+	//collapses the sidebar on window resize.
+	// Sets the min-height of #page-wrapper to window size
+	$(function() {
+	    $(window).bind("load resize", function() {
+	        topOffset = 50;
+	        width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;
+	        if (width < 768) {
+	            $('div.navbar-collapse').addClass('collapse');
+	            topOffset = 100; // 2-row-menu
+	        } else {
+	            $('div.navbar-collapse').removeClass('collapse');
+	        }
+
+	        height = ((this.window.innerHeight > 0) ? this.window.innerHeight : this.screen.height) - 1;
+	        height = height - topOffset;
+	        if (height < 1) height = 1;
+	        if (height > topOffset) {
+	            $("#page-wrapper").css("min-height", (height) + "px");
+	        }
+	    });
+
+	    var url = window.location;
+	    var element = $('ul.nav a').filter(function() {
+	        return this.href == url || url.href.indexOf(this.href) == 0;
+	    }).addClass('active').parent().parent().addClass('in').parent();
+	    if (element.is('li')) {
+	        element.addClass('active');
+	    }
+	});
+		  	</script>
+			   @yield('scripts')
+		 
+	@stop
 

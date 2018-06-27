@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Schema;
@@ -16,10 +17,13 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('username', 32);
-            $table->date('dob');
             $table->string('email')->unique();
             $table->string('password');
+            $table->tinyInteger('status')->default(1);
+            $table->string('api_token');
+            // $table->integer('created_by');
+            // $table->integer('updated_by');
+
             $table->rememberToken();
             $table->timestamps();
         });

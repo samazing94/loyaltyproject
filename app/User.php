@@ -18,7 +18,7 @@ class User extends Authenticatable
    // public $timestamps = false;
     public $primaryKey = 'id';
     protected $fillable = [
-        'name', 'username', 'dob', 'email', 'password',
+        'name', 'email', 'password', 'api_token', 'status', //'created_by', 'updated_by'
         //'name',
     ];
 
